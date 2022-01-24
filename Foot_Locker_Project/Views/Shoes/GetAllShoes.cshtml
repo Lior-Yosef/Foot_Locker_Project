@@ -1,10 +1,17 @@
-﻿using Foot_Locker_Project.Models;
+﻿@using Foot_Locker_Project.Models;
 
-@foreach ()
+@foreach (Shoe item in Model)
 {
-}
-
-
 <div>
-    <h1>@Model.CompanyName</h1>
+    <img src="@item.LinkIMG" />
+    <h1>@item.CompanyName</h1>
+    <p>@item.Type</p>
+    <p>@item.ShoesType</p>
+    <p>@item.Price</p>
+    <p>@item.Quantity</p>
+    <p>@item.OnSale</p>
+
+
+
 </div>
+}

@@ -7,20 +7,20 @@ using Foot_Locker_Project.Models;
 
 namespace Foot_Locker_Project.Controllers.api
 {
+
     public class ShoesController : Controller
+
     {
         static string StringConnection = "Data Source=LAPTOP-OT5IVM7S;Initial Catalog=SportStoreDB;Integrated Security=True;Pooling=False";
-        SportStoreDB db = new SportStoreDB(StringConnection);  
+        SportStoreDBDataContext db = new SportStoreDBDataContext(StringConnection);
         // GET: Shoes
         public ActionResult Index()
         {
             return View();
         }
-
         public ActionResult GetAllShoes()
         {
-            return View();
+            return View(db.Shoes.ToList());
         }
-
     }
 }

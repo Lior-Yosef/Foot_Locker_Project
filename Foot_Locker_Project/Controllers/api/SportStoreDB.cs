@@ -8,5 +8,7 @@
         {
             this.stringConnection = stringConnection;
         }
+
+        public object Shoes { get; set; }
     }
 }
