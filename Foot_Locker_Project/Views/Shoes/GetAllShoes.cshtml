@@ -1,17 +1,17 @@
 ﻿@using Foot_Locker_Project.Models;
-
-@foreach (Shoe item in Model)
-{
-<div>
-    <img src="@item.LinkIMG" />
-    <h1>@item.CompanyName</h1>
-    <p>@item.Type</p>
-    <p>@item.ShoesType</p>
-    <p>@item.Price</p>
-    <p>@item.Quantity</p>
-    <p>@item.OnSale</p>
-
+<link href="~/Content/Shoes.css" rel="stylesheet" type="text/css" />
+<section class="contener">
+    @foreach (Shoe item in Model)
+    {
+        <div class="box">
+            <img src="@item.LinkIMG" />
+            <h1><b>@item.CompanyName</b></h1>
+            <p>@item.Type</p>
+            <p>@item.ShoesType</p>
+            <p>Price: @item.Price$</p>
 
 
-</div>
-}
+
+        </div>
+    }
+</section>

@@ -1,0 +1,24 @@
+﻿body {
+}
+.contener{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold 300px;
+    margin: 25px;
+    transition:0.5s;
+}
+.box:hover{
+    background:black;
+    color:gray;
+}
+.box img{
+    width:350px;
+    height:350px;
+}

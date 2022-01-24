@@ -2,10 +2,16 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SportStoreDB">
   <DataContextMoniker Name="/SportStoreDBDataContext" />
   <nestedChildShapes>
-    <classShape Id="bd326c88-25a4-4abf-8471-84c4b4c38d2c" absoluteBounds="3, 0.625, 2, 2.3478011067708335">
+    <classShape Id="bd326c88-25a4-4abf-8471-84c4b4c38d2c" absoluteBounds="8.5, 0.5, 2, 2.3478011067708335">
       <DataClassMoniker Name="/SportStoreDBDataContext/Shoe" />
       <nestedChildShapes>
-        <elementListCompartment Id="b4f9d96f-5769-44c4-b800-5941bb14da0a" absoluteBounds="3.015, 1.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b4f9d96f-5769-44c4-b800-5941bb14da0a" absoluteBounds="8.515, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4d17c21-2408-4605-b87a-6af0f9849234" absoluteBounds="8.5, 3.875, 2, 2.5401025390625">
+      <DataClassMoniker Name="/SportStoreDBDataContext/Clothing" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19c4aa65-9128-4991-b48c-a15623e1b372" absoluteBounds="8.515, 4.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

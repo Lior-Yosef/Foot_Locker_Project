@@ -22,5 +22,9 @@ namespace Foot_Locker_Project.Controllers.api
         {
             return View(db.Shoes.ToList());
         }
+        public ActionResult ShoesOnSael()
+        {
+            return View(db.Shoes.ToList());
+        }
     }
 }
