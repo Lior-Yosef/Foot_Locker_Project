@@ -134,6 +134,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\api\ClothingController.cs" />
     <Compile Include="Controllers\api\ShoesController.cs" />
     <Compile Include="Controllers\api\SportStoreDB.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -153,6 +154,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Shoes.css" />
+    <Content Include="Content\Tablecss.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -194,6 +196,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shoes\GetAllShoes.cshtml" />
     <Content Include="Views\Shoes\ShoesOnSael.cshtml" />
+    <Content Include="Views\Clothing\AllClothing.cshtml" />
+    <Content Include="Views\Clothing\Tshirt.cshtml" />
+    <Content Include="Views\Shoes\TableDetails.cshtml" />
+    <Content Include="Views\Clothing\TableDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,17 +1,22 @@
 ﻿@using Foot_Locker_Project.Models;
 <link href="~/Content/Shoes.css" rel="stylesheet" type="text/css" />
+
+
+<button> @Html.ActionLink("click To Back", "GetAllShoes", "Shoes") </button>
+
+<a href="@Url.Action("GetAllShoes", "Shoes")" > clicccll a</a>
+<h1> Shoes on Seal</h1>
 <section class="contener">
+
     @foreach (Shoe item in Model)
     {
-       
+
     <div class="box">
         <img src="@item.LinkIMG" />
         <h1><b>@item.CompanyName</b></h1>
         <p>@item.Type</p>
         <p>@item.ShoesType</p>
         <p>Price: @item.Price$</p>
-        
-
 
     </div>
     }

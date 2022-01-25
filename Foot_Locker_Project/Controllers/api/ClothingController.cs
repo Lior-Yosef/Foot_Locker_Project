@@ -1,36 +1,33 @@
-﻿using System;
+﻿using Foot_Locker_Project.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Foot_Locker_Project.Models;
 
 namespace Foot_Locker_Project.Controllers.api
 {
-
-    public class ShoesController : Controller
-
+    public class ClothingController : Controller
     {
         static string StringConnection = "Data Source=LAPTOP-OT5IVM7S;Initial Catalog=SportStoreDB;Integrated Security=True;Pooling=False";
         SportStoreDBDataContext db = new SportStoreDBDataContext(StringConnection);
-        // GET: Shoes
+        // GET: Clothing
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult GetAllShoes()
+        public ActionResult AllClothing()
         {
-            return View(db.Shoes.ToList());
+            return View(db.Clothings.ToList());
         }
-        public ActionResult ShoesOnSael()
+        public ActionResult Tshirt()
         {
-            
-            return View(db.Shoes.Where(item=>item.OnSale==true).ToList());
+            return View(db.Clothings.Where(item=>item.Type =="T-Shirt").ToList());
         }
-
         public ActionResult TableDetails()
         {
-            return View(db.Shoes.ToList());
+            return View(db.Clothings.ToList());
         }
+
     }
 }
