@@ -36,6 +36,12 @@ namespace Foot_Locker_Project.Models
     partial void InsertClothing(Clothing instance);
     partial void UpdateClothing(Clothing instance);
     partial void DeleteClothing(Clothing instance);
+    partial void InsertSportClube(SportClube instance);
+    partial void UpdateSportClube(SportClube instance);
+    partial void DeleteSportClube(SportClube instance);
+    partial void InsertSport_Equipping(Sport_Equipping instance);
+    partial void UpdateSport_Equipping(Sport_Equipping instance);
+    partial void DeleteSport_Equipping(Sport_Equipping instance);
     #endregion
 		
 		public SportStoreDBDataContext() : 
@@ -81,6 +87,22 @@ namespace Foot_Locker_Project.Models
 			get
 			{
 				return this.GetTable<Clothing>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SportClube> SportClubes
+		{
+			get
+			{
+				return this.GetTable<SportClube>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Sport_Equipping> Sport_Equippings
+		{
+			get
+			{
+				return this.GetTable<Sport_Equipping>();
 			}
 		}
 	}
@@ -544,6 +566,391 @@ namespace Foot_Locker_Project.Models
 					this._IMGlink = value;
 					this.SendPropertyChanged("IMGlink");
 					this.OnIMGlinkChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SportClube")]
+	public partial class SportClube : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Name_Team;
+		
+		private EntitySet<Sport_Equipping> _Sport_Equippings;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnName_TeamChanging(string value);
+    partial void OnName_TeamChanged();
+    #endregion
+		
+		public SportClube()
+		{
+			this._Sport_Equippings = new EntitySet<Sport_Equipping>(new Action<Sport_Equipping>(this.attach_Sport_Equippings), new Action<Sport_Equipping>(this.detach_Sport_Equippings));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name_Team", DbType="VarChar(50)")]
+		public string Name_Team
+		{
+			get
+			{
+				return this._Name_Team;
+			}
+			set
+			{
+				if ((this._Name_Team != value))
+				{
+					this.OnName_TeamChanging(value);
+					this.SendPropertyChanging();
+					this._Name_Team = value;
+					this.SendPropertyChanged("Name_Team");
+					this.OnName_TeamChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SportClube_Sport_Equipping", Storage="_Sport_Equippings", ThisKey="Id", OtherKey="SportClubeID")]
+		public EntitySet<Sport_Equipping> Sport_Equippings
+		{
+			get
+			{
+				return this._Sport_Equippings;
+			}
+			set
+			{
+				this._Sport_Equippings.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Sport_Equippings(Sport_Equipping entity)
+		{
+			this.SendPropertyChanging();
+			entity.SportClube = this;
+		}
+		
+		private void detach_Sport_Equippings(Sport_Equipping entity)
+		{
+			this.SendPropertyChanging();
+			entity.SportClube = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Sport_Equipping")]
+	public partial class Sport_Equipping : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Sport_Type;
+		
+		private string _Product_Name;
+		
+		private string _Company;
+		
+		private System.Nullable<int> _Price;
+		
+		private string _Quantity;
+		
+		private System.Nullable<int> _SportClubeID;
+		
+		private string _IMG_Link;
+		
+		private EntityRef<SportClube> _SportClube;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnSport_TypeChanging(string value);
+    partial void OnSport_TypeChanged();
+    partial void OnProduct_NameChanging(string value);
+    partial void OnProduct_NameChanged();
+    partial void OnCompanyChanging(string value);
+    partial void OnCompanyChanged();
+    partial void OnPriceChanging(System.Nullable<int> value);
+    partial void OnPriceChanged();
+    partial void OnQuantityChanging(string value);
+    partial void OnQuantityChanged();
+    partial void OnSportClubeIDChanging(System.Nullable<int> value);
+    partial void OnSportClubeIDChanged();
+    partial void OnIMG_LinkChanging(string value);
+    partial void OnIMG_LinkChanged();
+    #endregion
+		
+		public Sport_Equipping()
+		{
+			this._SportClube = default(EntityRef<SportClube>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sport_Type", DbType="VarChar(50)")]
+		public string Sport_Type
+		{
+			get
+			{
+				return this._Sport_Type;
+			}
+			set
+			{
+				if ((this._Sport_Type != value))
+				{
+					this.OnSport_TypeChanging(value);
+					this.SendPropertyChanging();
+					this._Sport_Type = value;
+					this.SendPropertyChanged("Sport_Type");
+					this.OnSport_TypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Name", DbType="VarChar(50)")]
+		public string Product_Name
+		{
+			get
+			{
+				return this._Product_Name;
+			}
+			set
+			{
+				if ((this._Product_Name != value))
+				{
+					this.OnProduct_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Product_Name = value;
+					this.SendPropertyChanged("Product_Name");
+					this.OnProduct_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Company", DbType="VarChar(50)")]
+		public string Company
+		{
+			get
+			{
+				return this._Company;
+			}
+			set
+			{
+				if ((this._Company != value))
+				{
+					this.OnCompanyChanging(value);
+					this.SendPropertyChanging();
+					this._Company = value;
+					this.SendPropertyChanged("Company");
+					this.OnCompanyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Int")]
+		public System.Nullable<int> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this.OnPriceChanging(value);
+					this.SendPropertyChanging();
+					this._Price = value;
+					this.SendPropertyChanged("Price");
+					this.OnPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="VarChar(50)")]
+		public string Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SportClubeID", DbType="Int")]
+		public System.Nullable<int> SportClubeID
+		{
+			get
+			{
+				return this._SportClubeID;
+			}
+			set
+			{
+				if ((this._SportClubeID != value))
+				{
+					if (this._SportClube.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnSportClubeIDChanging(value);
+					this.SendPropertyChanging();
+					this._SportClubeID = value;
+					this.SendPropertyChanged("SportClubeID");
+					this.OnSportClubeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IMG_Link", DbType="VarChar(MAX)")]
+		public string IMG_Link
+		{
+			get
+			{
+				return this._IMG_Link;
+			}
+			set
+			{
+				if ((this._IMG_Link != value))
+				{
+					this.OnIMG_LinkChanging(value);
+					this.SendPropertyChanging();
+					this._IMG_Link = value;
+					this.SendPropertyChanged("IMG_Link");
+					this.OnIMG_LinkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SportClube_Sport_Equipping", Storage="_SportClube", ThisKey="SportClubeID", OtherKey="Id", IsForeignKey=true)]
+		public SportClube SportClube
+		{
+			get
+			{
+				return this._SportClube.Entity;
+			}
+			set
+			{
+				SportClube previousValue = this._SportClube.Entity;
+				if (((previousValue != value) 
+							|| (this._SportClube.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._SportClube.Entity = null;
+						previousValue.Sport_Equippings.Remove(this);
+					}
+					this._SportClube.Entity = value;
+					if ((value != null))
+					{
+						value.Sport_Equippings.Add(this);
+						this._SportClubeID = value.Id;
+					}
+					else
+					{
+						this._SportClubeID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("SportClube");
 				}
 			}
 		}
