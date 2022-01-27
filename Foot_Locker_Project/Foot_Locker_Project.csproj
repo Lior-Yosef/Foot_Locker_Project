@@ -201,6 +201,8 @@
     <Content Include="Views\Clothing\Tshirt.cshtml" />
     <Content Include="Views\Shoes\TableDetails.cshtml" />
     <Content Include="Views\Clothing\TableDetails.cshtml" />
+    <Content Include="Views\Clothing\GenderMan.cshtml" />
+    <Content Include="Views\Clothing\GenderWomen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

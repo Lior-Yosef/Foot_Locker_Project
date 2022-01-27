@@ -20,6 +20,14 @@ namespace Foot_Locker_Project.Controllers.api
         {
             return View(db.Clothings.Where(item=>item.Type =="T-Shirt").ToList());
         }
+        public ActionResult GenderMan()
+        {
+            return View(db.Clothings.Where(item => item.Gender == "Male").ToList());
+        }
+        public ActionResult GenderWomen()
+        {
+            return View(db.Clothings.Where(item => item.Gender == "Female").ToList());
+        }
         public ActionResult TableDetails()
         {
             return View(db.Clothings.ToList());

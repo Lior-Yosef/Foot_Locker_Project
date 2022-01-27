@@ -1,11 +1,10 @@
 ﻿body {
 }
 .LogoNavBar {
-
+    width:100%;
     display: flex;
     justify-content: space-between;
-    background-color: #222;
-    border-color: #080808;
+    
 }
 
 .LogoNavBar a {
@@ -27,116 +26,78 @@
     padding: 0%;
 }
 
-/*.SliderLogos {
-    width: 50%;
+.Linkboxs{
     display: flex;
-    overflow: hidden;*/
-/*    margin-left: 25%;*/
-    /*margin-top: 30px;
+    justify-content: space-evenly;
 }
 
-    .SliderLogos .photos {
-        width: 90%;
-        height: 90%;
-        flex-shrink: 0;*/
-/*        animation: moveToside 20s alternate infinite;*/
-/*        animation-delay: 4s;*/
-    }
-
-/*        .SliderLogos .photos img {
-            width: 100%;
-            border-radius: 10px;
-        }*/
-/*@keyframes moveToside {
-    0% {
-        transform: translateX(-0%);
-    }
-
-    10% {
-        transform: translateX(-100%);
-    }
-
-    20% {
-        transform: translateX(-200%);
-    }
-
-    30% {
-        transform: translateX(-300%);
-    }
-
-    40% {
-        transform: translateX(-400%);
-    }
-
-    50% {
-        transform: translateX(-500%);
-    }
-
-    60% {
-        transform: translateX(-600%);
-    }
-
-    70% {
-        transform: translateX(-700%);
-    }
-
-    80% {
-        transform: translateX(-800%);
-    }
-
-    90% {
-        transform: translateX(-900%);
-    }
-
-    100% {
-        transform: translateX(-1000%);
-    }
-}*/
-
-* {
-    padding: 0;
-    margin: 0;
+.Man {
+    width: 320px;
+    height: 400px;
+    background-image: url(https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/0bafb728-2ae2-416f-bb18-5935801c8071/nike-just-do-it.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding: 0%;
+    margin:10px;
+}
+.Womens {
+    width: 320px;
+    height: 400px;
+    background-image: url(https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/2c8754ce-6287-4e77-a198-1ad483fba257/nike-just-do-it.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding: 0%;
+    margin: 10px;
+}
+.shoes {
+    width: 320px;
+    height: 400px;
+    background-image: url(https://images.asos-media.com/products/adidas-originals-streetball-ii-trainers-in-grey-tones-and-cream/201271050-1-grey?$n_750w$&wid=750&fit=constrain);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding: 0%;
+    margin: 10px;
+}
+.sports_equipment {
+    width: 320px;
+    height: 400px;
+    background-image: url(https://i.pinimg.com/564x/05/f9/c2/05f9c217b0bcf7b3d25ecaffcc943e2d.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding: 0%;
+    margin: 10px;
+}
+button {
+    margin-top: 310px;
+    margin-left: 40px;
+    font-size: 15px;
+    width: 150px;
+    border-radius: 25px;
+    background: transparent;
+    border: 2px solid #e5a00d;
+    color: #e5a00d;
 }
 
-.slide {
-    width: 50%;
-    height: 50vh;
+footer nav {
     display: flex;
-    overflow: hidden;
-    margin-left: 5%;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e5a10d96;
+    
 }
 
-    .slide .card {
-        width: 100%;
-        height: 100%;
-        flex-shrink: 0;
-        animation: moveToside 5s alternate infinite;
-        animation-delay: 3s;
-    }
+footer h4 {
+    text-align: center;
+    color: blanchedalmond;
+    font-size: 40px;
+    font-family: 'Fruktur', cursive;
+}
 
-        .slide .card img {
-            width: 100%;
-            height: 100%;
-        }
-
-@keyframes moveToside {
-    0% {
-        transform: translateX(-0%);
-    }
-
-    25% {
-        transform: translateX(-100%);
-    }
-
-    50% {
-        transform: translateX(-200%);
-    }
-
-    75% {
-        transform: translateX(-300%);
-    }
-
-    100% {
-        transform: translateX(-400%);
-    }
+.icons img {
+    margin: 15px;
+    width: 50px;
 }

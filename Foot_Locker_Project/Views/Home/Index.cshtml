@@ -3,13 +3,23 @@
 }
 <link href="~/Content/HomePage.css" rel="stylesheet" type="text/css" />
 
+<div class="LogoNavBar">
+    <img src="file:///C:/Users/liory/Desktop/Full-Stack/Projects/Movies%20Project/images/jacovLogo%20png.png" alt="indi_com" />
+
+    <img src="https://iconape.com/wp-content/png_logo_vector/foot-locker-logo.png" alt="foot_locker" />
+
+    <a href="https://www.tech-career.org/">
+        <img src="https://www.ibh.co.il/wp-content/uploads/2018/06/%D7%98%D7%A7-%D7%A7%D7%A8%D7%99%D7%99%D7%A8%D7%94-2.png" alt="Tec-Career">
+    </a>
+
+</div>
 
 <div class="containerBackground">
     <img src="https://s3.amazonaws.com/nikeinc/assets/39293/Nike_Free_2015_athletes1_hd_1600.jpg?1426799395" />
 </div>
 
 <div class="jumbotron">
-    <h1>Fooot Locker Retail, Inc</h1>
+    <h1>Fooot Locker, Inc</h1>
     <p class="lead">
         Foot Locker is an American sportswear and footwear retailer, with its headquarters in Midtown Manhattan, New York City, and operating in 28 countries.
         The company operates the eponymous “Foot Locker” chain of athletic footwear retail outlets (along with “Kids Foot Locker” and “Lady Foot Locker” stores),
@@ -19,20 +29,34 @@
     <p><a href="https://en.wikipedia.org/wiki/Foot_Locker" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
-@*<div class="SliderLogos">
-        <article class="photos"> <img src="https://pngimg.com/uploads/nike/nike_PNG15.png" alt="nike"> </article>
-        <article class="photos"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Original_Adidas_logo.svg/1200px-Original_Adidas_logo.svg.png" alt="adias"> </article>
-        <article class="photos"> <img src="https://1000logos.net/wp-content/uploads/2021/05/Champion-logo.png" alt="Champion"> </article>
-        <article class="photos"> <img src="https://pngimg.com/uploads/nike/nike_PNG15.png" alt="nike"> </article>
+
+<div class="Linkboxs">
+    <div class="Man">
+        <a href="@Url.Action("GenderMan","Clothing")">
+            <button> Man's </button>
+        </a>
+    </div>
+
+    <div class="Womens">
+        <a href="@Url.Action("GenderWomen","Clothing")">
+            <button> Women's </button>
+        </a>
+    </div>
+
+    <div class="shoes">
+        <a href="@Url.Action("GetAllShoes","Shoes")">
+            <button> Shoes </button>
+        </a>
+    </div>
+    <div class="sports_equipment">
+        <a href="@Url.Action("GetAllShoes","Shoes")">
+            <button> Sports Equipment </button>
+        </a>
+    </div>
 
 
-    </div>*@
-<section class="slide">
-    <article class="card"><img src="https://pngimg.com/uploads/nike/nike_PNG15.png" alt=""></article>
-    <article class="card"><img src="https://cdn.freebiesupply.com/logos/large/2x/champion-1-logo-png-transparent.png" alt=""></article>
-    <article class="card"><img src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg" alt=""></article>
-    <article class="card"><img src="https://s3-us-west-2.amazonaws.com/melingoimages/Images/27866.jpg" alt=""></article>
-</section>
+</div>
+
 
 <div class="row">
     <div class="col-md-4">
@@ -55,3 +79,16 @@
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+
+<footer>
+    <nav>
+        <h4>Follow Us:</h4>
+        <section class="icons">
+            <a href="https://www.linkedin.com/feed/" target="_blank"><img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/linkedin_black_logo_icon_147114.png"></a>
+            <a href="https://github.com/Lior-Yosef" target="_blank"> <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"> </a>
+            <a href="https://www.youtube.com/watch?v=tPEptoAc5Q0" target="_blank"> <img src="https://icons.veryicon.com/png/o/miscellaneous/myicon-1/youtube-125.png"> </a>
+            <a href="https://www.facebook.com/footlockerIL" target="_blank" rel=""> <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Facebook%2BIcon%2BBlack.png"> </a>
+        </section>
+    </nav>
+
+</footer>
