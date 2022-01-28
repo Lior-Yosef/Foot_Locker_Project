@@ -135,6 +135,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\api\ClothingController.cs" />
+    <Compile Include="Controllers\api\EquippingController.cs" />
     <Compile Include="Controllers\api\ShoesController.cs" />
     <Compile Include="Controllers\api\SportStoreDB.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -203,6 +204,14 @@
     <Content Include="Views\Clothing\TableDetails.cshtml" />
     <Content Include="Views\Clothing\GenderMan.cshtml" />
     <Content Include="Views\Clothing\GenderWomen.cshtml" />
+    <Content Include="Views\Clothing\ManTshirt.cshtml" />
+    <Content Include="Views\Clothing\ManShorts.cshtml" />
+    <Content Include="Views\Clothing\WomenTshirt.cshtml" />
+    <Content Include="Views\Clothing\WomenShorts.cshtml" />
+    <Content Include="Views\Equipping\TableDetails.cshtml" />
+    <Content Include="Views\Equipping\AllEquippings.cshtml" />
+    <Content Include="Views\Equipping\FootBallEquippings.cshtml" />
+    <Content Include="Views\Equipping\BasketBallEquippings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -2,7 +2,18 @@
 
 <link href="~/Content/Shoes.css" rel="stylesheet" type="text/css" />
 
-    <button> @Html.ActionLink("click Here", "ShoesOnSael", "Shoes") </button>
+<div class="btnView">
+
+    <a href="@Url.Action("ShoesOnSael", "Shoes")">
+        @*<img src="https://freepikpsd.com/file/2019/10/sale-png-Transparent-Images.png" alt="seal"/>*@
+        <button> Shoes on Seal </button>
+    </a>
+
+    <a href="@Url.Action("TableDetails", "Shoes")">
+        <button> Manager view </button>
+    </a>
+
+</div>
 <section class="contener">
     @*<a href="/AllClothing/Clothing">click here</a>*@
     @foreach (Shoe item in Model)

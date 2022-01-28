@@ -1,6 +1,20 @@
 ﻿@using Foot_Locker_Project.Models;
 <link href="~/Content/Shoes.css" rel="stylesheet" type="text/css" />
 
+<div class="btnView">
+
+    <a href="@Url.Action("ManTshirt", "Clothing")">
+        <button> T-shirt </button>
+    </a>
+    <a href="@Url.Action("ManShorts", "Clothing")">
+        <button> Shorts </button>
+    </a>
+    <a href="@Url.Action("TableDetails", "Clothing")">
+        <button> Manager view </button>
+    </a>
+
+</div>
+
 <section class="contener">
 
     @foreach (Clothing item in Model)

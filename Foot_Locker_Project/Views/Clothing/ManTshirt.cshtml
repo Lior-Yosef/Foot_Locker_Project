@@ -3,17 +3,16 @@
 
 <div class="btnView">
 
-    <a href="@Url.Action("WomenTshirt", "Clothing")">
-        <button> T-shirt </button>
+    <a href="@Url.Action("GenderMan", "Clothing")">
+        <button> Man Clothing  </button>
     </a>
-    <a href="@Url.Action("WomenShorts", "Clothing")">
-        <button> Shorts </button>
-    </a>
-    <a href="@Url.Action("TableDetails", "Clothing")">
+    
+    <a href="@Url.Action("TableDetails", "Shoes")">
         <button> Manager view </button>
     </a>
 
 </div>
+
 <section class="contener">
 
     @foreach (Clothing item in Model)

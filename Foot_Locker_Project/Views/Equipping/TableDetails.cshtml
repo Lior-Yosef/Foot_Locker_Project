@@ -1,0 +1,35 @@
+﻿@using Foot_Locker_Project.Models;
+<link href="~/Content/Tablecss.css" rel="stylesheet" type="text/css" />
+
+
+<table>
+
+    <tr>
+        <th>Id </th>
+        <th>Sport Type</th>
+        <th>Product Name </th>
+        <th>Company</th>
+        <th>Price </th>
+        <th>Quantity </th>
+        <th>SportClubeID </th>
+        <th>LinkIMG</th>
+    </tr>
+    @foreach (Sport_Equipping item in Model)
+    {
+        <tr>
+            <td>@item.Id </td>
+            <td>@item.Sport_Type </td>
+            <td>@item.Product_Name </td>
+            <td>@item.Company </td>
+            <td>@item.Price </td>
+            <td>@item.Quantity </td>
+            <td>@item.SportClubeID </td>
+            <td><img src="@item.IMG_Link" </td>
+
+        </tr>
+    }
+
+
+
+
+</table>

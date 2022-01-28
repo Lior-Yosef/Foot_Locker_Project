@@ -22,3 +22,20 @@
     width:350px;
     height:350px;
 }
+.btnView{
+    display:flex;
+    justify-content:space-between;
+}
+
+.btnView button {
+    font-size: 15px;
+    width: 150px;
+    border-radius: 25px;
+    background: transparent;
+    border: 2px solid #e5a00d;
+    color: #e5a00d;
+}
+
+img{
+    width:100px;
+}

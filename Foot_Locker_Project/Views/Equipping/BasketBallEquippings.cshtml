@@ -1,0 +1,25 @@
+﻿@using Foot_Locker_Project.Models;
+<link href="~/Content/Shoes.css" rel="stylesheet" type="text/css" />
+
+<div class="btnView">
+    <a href="@Url.Action("AllEquippings", "Equipping")">
+        <button> Go Back </button>
+    </a>
+    <a href="@Url.Action("TableDetails", "Equipping")">
+        <button> Manager view </button>
+    </a>
+</div>
+
+<section class="contener">
+
+    @foreach (Sport_Equipping item in Model)
+    {
+        <div class="box">
+            <img src="@item.IMG_Link" />
+            <h1>@item.Company: @item.Product_Name</h1>
+            <p> @item.Company</p>
+            <p>Price: @item.Price$</p>
+
+        </div>
+    }
+</section>

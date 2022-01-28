@@ -24,9 +24,25 @@ namespace Foot_Locker_Project.Controllers.api
         {
             return View(db.Clothings.Where(item => item.Gender == "Male").ToList());
         }
+        public ActionResult ManTshirt()
+        {
+            return View(db.Clothings.Where(item => item.Gender == "Male" && item.Type == "T-Shirt").ToList());
+        }
+        public ActionResult ManShorts()
+        {
+            return View(db.Clothings.Where(item => item.Gender == "Male" && item.Type == "Shorts").ToList());
+        }
         public ActionResult GenderWomen()
         {
             return View(db.Clothings.Where(item => item.Gender == "Female").ToList());
+        }
+        public ActionResult WomenTshirt()
+        {
+            return View(db.Clothings.Where(item => item.Gender == "Female" && item.Type == "T-Shirt").ToList());
+        }
+        public ActionResult WomenShorts()
+        {
+            return View(db.Clothings.Where(item => item.Gender == "Female" && item.Type == "Shorts").ToList());
         }
         public ActionResult TableDetails()
         {
