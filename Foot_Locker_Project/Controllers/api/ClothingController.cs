@@ -2,52 +2,88 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 
 namespace Foot_Locker_Project.Controllers.api
 {
-    public class ClothingController : Controller
+    public class clothingController : ApiController
     {
-        static string StringConnection = "Data Source=LAPTOP-OT5IVM7S;Initial Catalog=SportStoreDB;Integrated Security=True;Pooling=False";
+        // GET: api/clothing
+
+        public static string StringConnection = "Data Source=LAPTOP-OT5IVM7S;Initial Catalog=SportStoreDB;Integrated Security=True;Pooling=False";
         SportStoreDBDataContext db = new SportStoreDBDataContext(StringConnection);
-        // GET: Clothing
-        public ActionResult AllClothing()
+        public IHttpActionResult Get()
         {
-            return View(db.Clothings.ToList());
-        }
-        public ActionResult Tshirt()
-        {
-            return View(db.Clothings.Where(item=>item.Type =="T-Shirt").ToList());
-        }
-        public ActionResult GenderMan()
-        {
-            return View(db.Clothings.Where(item => item.Gender == "Male").ToList());
-        }
-        public ActionResult ManTshirt()
-        {
-            return View(db.Clothings.Where(item => item.Gender == "Male" && item.Type == "T-Shirt").ToList());
-        }
-        public ActionResult ManShorts()
-        {
-            return View(db.Clothings.Where(item => item.Gender == "Male" && item.Type == "Shorts").ToList());
-        }
-        public ActionResult GenderWomen()
-        {
-            return View(db.Clothings.Where(item => item.Gender == "Female").ToList());
-        }
-        public ActionResult WomenTshirt()
-        {
-            return View(db.Clothings.Where(item => item.Gender == "Female" && item.Type == "T-Shirt").ToList());
-        }
-        public ActionResult WomenShorts()
-        {
-            return View(db.Clothings.Where(item => item.Gender == "Female" && item.Type == "Shorts").ToList());
-        }
-        public ActionResult TableDetails()
-        {
-            return View(db.Clothings.ToList());
+            try
+            {
+                return Ok(db.Clothings.ToList());
+
+            }
+            catch (sqlException ex) { return BadRequest(ex.Message); }
+            catch (Exception ex) { return BadRequest(ex.Message); }
         }
 
+        // GET: api/clothing/5
+        public IHttpActionResult Get(int id)
+        {
+            try
+            {
+
+                return Ok(db.Clothings.First(item => item.Id == id));
+            }
+            catch (sqlException ex) { return BadRequest(ex.Message); }
+            catch (Exception ex) { return BadRequest(ex.Message); }
+        }
+
+        // POST: api/clothing
+        public IHttpActionResult Post([FromBody] Clothing value)
+        {
+            try
+            {
+                db.Clothings.InsertOnSubmit(value);
+                db.SubmitChanges();
+                return Ok("row add Successfully");
+
+            }
+            catch (sqlException ex) { return BadRequest(ex.Message); }
+            catch (Exception ex) { return BadRequest(ex.Message); }
+        }
+
+        // PUT: api/clothing/5
+        public IHttpActionResult Put(int id, [FromBody] Clothing value)
+        {
+            try
+            {
+                Clothing updateClothing = db.Clothings.First((item) => item.Id == id);
+                updateClothing.Company = value.Company;
+                updateClothing.Type = value.Type;
+                updateClothing.Gender = value.Gender;
+                updateClothing.Price = value.Price;
+                updateClothing.Quantity = value.Quantity;
+                updateClothing.Short = value.Short;
+                updateClothing.Dryfit = value.Dryfit;
+
+                db.SubmitChanges();
+                return Ok(new { updateClothing });
+
+            }
+            catch (sqlException ex) { return BadRequest(ex.Message); }
+            catch (Exception ex) { return BadRequest(ex.Message); }
+        }
+
+        // DELETE: api/clothing/5
+        public IHttpActionResult Delete(int id)
+        {
+            try
+            {
+                db.Clothings.DeleteOnSubmit(db.Clothings.First((item) => item.Id == id));
+                db.SubmitChanges();
+                return Ok("Delete");
+            }
+            catch (sqlException ex) { return BadRequest(ex.Message); }
+            catch (Exception ex) { return BadRequest(ex.Message); }
+        }
     }
 }

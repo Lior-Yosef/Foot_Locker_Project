@@ -1,37 +1,29 @@
 ﻿@using Foot_Locker_Project.Models;
-
 <link href="~/Content/Shoes.css" rel="stylesheet" type="text/css" />
 
 <div class="btnView">
 
-    <a href="@Url.Action("ShoesOnSael", "Shoes")">
-        @*<img src="https://freepikpsd.com/file/2019/10/sale-png-Transparent-Images.png" alt="seal"/>*@
-        <button> Shoes on Seal </button>
-    </a>
-
-    <a href="@Url.Action("ShortShoes", "Shoes")">
-        <button> Short By Price </button>
+    <a href="@Url.Action("GetAllShoes", "Shoes")">
+        <button> click To Back </button>
     </a>
 
     <a href="@Url.Action("TableDetails", "Shoes")">
         <button> Manager view </button>
     </a>
 
-
-
 </div>
+
 <section class="contener">
-    @*<a href="/AllClothing/Clothing">click here</a>*@
+
     @foreach (Shoe item in Model)
     {
+
         <div class="box">
             <img src="@item.LinkIMG" />
             <h1><b>@item.CompanyName</b></h1>
             <p>@item.Type</p>
             <p>@item.ShoesType</p>
             <p>Price: @item.Price$</p>
-
-
 
         </div>
     }

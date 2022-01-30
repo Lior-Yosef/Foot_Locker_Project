@@ -50,12 +50,18 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -134,9 +140,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\api\ClothingController.cs" />
-    <Compile Include="Controllers\api\EquippingController.cs" />
-    <Compile Include="Controllers\api\ShoesController.cs" />
+    <Compile Include="Controllers\api\clothingController.cs" />
+    <Compile Include="Controllers\api\equippingController.cs" />
+    <Compile Include="Controllers\api\shoesController.cs" />
+    <Compile Include="Controllers\api\sqlException.cs" />
+    <Compile Include="Controllers\ClothingController.cs" />
+    <Compile Include="Controllers\EquippingController.cs" />
+    <Compile Include="Controllers\ShoesController.cs" />
     <Compile Include="Controllers\api\SportStoreDB.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -212,6 +222,12 @@
     <Content Include="Views\Equipping\AllEquippings.cshtml" />
     <Content Include="Views\Equipping\FootBallEquippings.cshtml" />
     <Content Include="Views\Equipping\BasketBallEquippings.cshtml" />
+    <Content Include="Views\Clothing\ShortMan.cshtml" />
+    <Content Include="Views\Shoes\ShortShoes.cshtml" />
+    <Content Include="Views\Clothing\ShorTshirt.cshtml" />
+    <Content Include="Views\Clothing\ShortTshirt.cshtml" />
+    <Content Include="Views\Clothing\OrderManShorts.cshtml" />
+    <Content Include="Views\Clothing\OrderWomenShorts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
